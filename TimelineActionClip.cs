@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
+
+[Serializable]
+public class TimelineActionClip : PlayableAsset, ITimelineClipAsset
+{
+	[SerializeField]
+	private List<TimelineActions> m_Actions = new List<TimelineActions>();
+
+	public List<TimelineActions> Actions => m_Actions;
+
+	public ClipCaps clipCaps => ClipCaps.None;
+
+	public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+	{
+		ScriptPlayable<TimelineActionBehaviour> scriptPlayable = ScriptPlayable<TimelineActionBehaviour>.Create(graph);
+		scriptPlayable.GetBehaviour().Actions = Actions;
+		return scriptPlayable;
+	}
+}
