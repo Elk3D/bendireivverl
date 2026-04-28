@@ -1,0 +1,19 @@
+public enum EnemyType
+{
+	Generic,
+	LostOne,
+	Searcher,
+	InkWidow,
+	ButcherGang,
+	Keeper,
+	KingWidow,
+	ShipAhoy,
+	LostOneColor,
+	ButcherGang_Fisher,
+	ButcherGang_Piper,
+	ButcherGang_Striker,
+	ButcherGang_Slicer,
+	LostOneSeasonalWinter,
+	LostOneSeasonalHalloween,
+	LostOneSeasonalHalloweenPumpkinHead
+}
