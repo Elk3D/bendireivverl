@@ -52,13 +52,8 @@ namespace CharacterController
                 ? m_TurnSpeedBoostTimer + Time.deltaTime
                 : 0f;
 
-            float mouseScale    = 150f;
-            float controllerScale = 150f;
-            if (FPSInput.HasController)
-            {
-                mouseScale    = 80f;
-                controllerScale = 40f;
-            }
+            const float mouseScale    = 150f;
+            const float controllerScale = 150f;
 
             m_InputX =         rawX              * m_Sensitivity * mouseScale    * Time.fixedDeltaTime;
             m_InputY = -FPSInput.LookY()         * m_Sensitivity * controllerScale * Time.fixedDeltaTime;
